@@ -1,6 +1,6 @@
 ![WLED](https://user-images.githubusercontent.com/69341431/158558688-2b1e5e28-73e3-4aea-a6bb-800aafa6e1bb.png)
 
-# WLED Preset Cycler
+# Control4 WLED Preset Cycler
 
 Control4 Driver for WLED Controller Preset Cycling and Brightness/On/Off Control
 

@@ -1,0 +1,275 @@
+<devicedata>
+	<copyright>Copyright 2022 Welton Cartel. All rights reserved.</copyright>
+	<creator>Welton Cartel</creator>
+	<manufacturer>Aircookie</manufacturer>
+	<name>WLED Controller (Preset Cycler)</name>
+	<model>WLED Compatible Hardware</model>
+	<created>26/11/2021 12:00 AM</created>
+	<modified>16/03/2022 12:00 AM</modified>
+	<version>3</version>
+	<control>lua_gen</control>
+	<driver>DriverWorks</driver>
+	<controlmethod>ip</controlmethod>
+	<small image_source="c4z">icons/device_sm.png</small>
+	<large image_source="c4z">icons/device_lg.png</large>
+	<proxies qty="2">
+		<proxy proxybindingid="5001" name="WLED" primary="True">light_v2</proxy>
+		<proxy proxybindingid="5002" name="WLED Presets" image_source="c4z" small_image="icons/device_sm.png" large_image="icons/device_lg.png">uibutton</proxy>
+	</proxies>
+	<events/>
+	<config>
+		<script file="driver.lua"/>
+		<documentation file="www/documentation/index.html"/>
+		<properties>
+			<property>
+				<name>Driver Information</name>
+				<type>LABEL</type>
+				<default>Driver Information</default>
+			</property>
+			<property>
+				<name>Driver Name</name>
+				<type>STRING</type>
+				<default/>
+				<readonly>true</readonly>
+			</property>
+			<property>
+				<name>Driver Version</name>
+				<type>STRING</type>
+				<default/>
+				<readonly>true</readonly>
+			</property>
+			<property>
+				<name>Debug Mode</name>
+				<type>LIST</type>
+				<items>
+					<item>Off</item>
+					<item>On</item>
+				</items>
+				<default>Off</default>
+				<readonly>false</readonly>
+			</property>
+			<property>
+				<name>Device Information</name>
+				<type>LABEL</type>
+				<default>Device Information</default>
+			</property>
+			<property>
+				<name>IP Address</name>
+				<type>STRING</type>
+				<default/>
+			</property>
+			<property>
+				<name>UDP Multicast Port</name>
+				<type>STRING</type>
+				<default>21324</default>
+			</property>
+			<property>
+				<name>Power State</name>
+				<type>STRING</type>
+				<default>off</default>
+				<readonly>true</readonly>
+			</property>
+			<property>
+				<name>Brightness</name>
+				<type>STRING</type>
+				<default>0</default>
+				<readonly>true</readonly>
+			</property>
+			<property>
+				<name>Presets</name>
+				<type>RANGED_INTEGER</type>
+				<minimum>1</minimum>
+				<maximum>10</maximum>
+				<default>1</default>
+			</property>
+		</properties>
+		<actions/>
+		<commands>
+			<command>
+				<name>Select Preset</name>
+				<description>Set the Preset on NAME to: PARAM1</description>
+				<params>
+					<param>
+						<name>Preset</name>
+						<type>RANGED_INTEGER</type>
+						<minimum>1</minimum>
+						<maximum>10</maximum>
+						<default>1</default>
+					</param>
+				</params>
+			</command>
+		</commands>
+	</config>
+	<capabilities>
+		<navigator_display_option proxybindingid="5002">
+			<display_icons>
+				<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-off.png</Icon>
+				<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-off.png</Icon>
+				<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-off.png</Icon>
+				<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-off.png</Icon>
+				<state id="on">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-on.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-on</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-on.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-on.png</Icon>
+				</state>
+				<state id="off">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-off.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-off.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-off.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-off.png</Icon>
+				</state>
+				<state id="1">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset1.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset1.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset1.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset1.png</Icon>
+				</state>
+				<state id="2">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset2.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset2.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset2.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset2.png</Icon>
+				</state>
+				<state id="3">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset3.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset3.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset3.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset3.png</Icon>
+				</state>
+				<state id="4">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset4.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset4.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset4.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset4.png</Icon>
+				</state>
+				<state id="5">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset5.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset5.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset5.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset5.png</Icon>
+				</state>
+				<state id="6">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset6.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset6.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset6.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset6.png</Icon>
+				</state>
+				<state id="7">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset7.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset7.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset7.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset7.png</Icon>
+				</state>
+				<state id="8">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset8.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset8.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset8.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset8.png</Icon>
+				</state>
+				<state id="9">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset9.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset9.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset9.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset9.png</Icon>
+				</state>
+				<state id="10">
+					<Icon width="70" height="70">controller://driver/WLED-PresetCycler/icons/device/ledstrip_70-preset10.png</Icon>
+					<Icon width="90" height="90">controller://driver/WLED-PresetCycler/icons/device/ledstrip_90-preset10.png</Icon>
+					<Icon width="300" height="300">controller://driver/WLED-PresetCycler/icons/device/ledstrip_300-preset10.png</Icon>
+					<Icon width="512" height="512">controller://driver/WLED-PresetCycler/icons/device/ledstrip_512-preset10.png</Icon>
+				</state>
+			</display_icons>
+		</navigator_display_option>
+		<dimmer>True</dimmer>
+		<set_level>True</set_level>
+		<ramp_level>True</ramp_level>
+		<click_rates>False</click_rates>
+		<hold_rates>False</hold_rates>
+		<has_preset>False</has_preset>
+		<on_off>True</on_off>
+		<has_leds>False</has_leds>
+		<hide_proxy_events>False</hide_proxy_events>
+		<hide_proxy_properties>True</hide_proxy_properties>
+		<has_button_events>True</has_button_events>
+		<num_buttons>3</num_buttons>
+		<load_group_support>False</load_group_support>
+	</capabilities>
+	<connections>
+		<connection proxybindingid="5001">
+			<id>5001</id>
+			<facing>6</facing>
+			<connectionname>WLED</connectionname>
+			<type>2</type>
+			<consumer>False</consumer>
+			<audiosource>False</audiosource>
+			<videosource>False</videosource>
+			<linelevel>False</linelevel>
+			<classes>
+				<class>
+					<classname>LIGHT_V2</classname>
+				</class>
+			</classes>
+		</connection>
+		<connection proxybindingid="5002">
+			<id>5002</id>
+			<facing>6</facing>
+			<connectionname>WLED</connectionname>
+			<type>2</type>
+			<audiosource>False</audiosource>
+			<videosource>False</videosource>
+			<consumer>False</consumer>
+			<linelevel>False</linelevel>
+			<classes>
+				<class>
+					<classname>UIBUTTON</classname>
+				</class>
+			</classes>
+		</connection>
+		<connection proxybindingid="5001">
+			<id>300</id>
+			<facing>6</facing>
+			<connectionname>On Button Link</connectionname>
+			<type>1</type>
+			<consumer>False</consumer>
+			<audiosource>False</audiosource>
+			<videosource>False</videosource>
+			<linelevel>True</linelevel>
+			<classes>
+				<class>
+					<classname>BUTTON_LINK</classname>
+				</class>
+			</classes>
+		</connection>
+		<connection proxybindingid="5001">
+			<id>301</id>
+			<facing>6</facing>
+			<connectionname>Off Button Link</connectionname>
+			<type>1</type>
+			<consumer>False</consumer>
+			<audiosource>False</audiosource>
+			<videosource>False</videosource>
+			<linelevel>True</linelevel>
+			<classes>
+				<class>
+					<classname>BUTTON_LINK</classname>
+				</class>
+			</classes>
+		</connection>
+		<connection proxybindingid="5001">
+			<id>302</id>
+			<facing>6</facing>
+			<connectionname>Toggle Button Link</connectionname>
+			<type>1</type>
+			<consumer>False</consumer>
+			<audiosource>False</audiosource>
+			<videosource>False</videosource>
+			<linelevel>True</linelevel>
+			<classes>
+				<class>
+					<classname>BUTTON_LINK</classname>
+				</class>
+			</classes>
+		</connection>
+	</connections>
+</devicedata>

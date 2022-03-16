@@ -1,4 +1,3 @@
-
 /*
 object-assign
 (c) Sindre Sorhus

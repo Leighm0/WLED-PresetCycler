@@ -31,3 +31,4 @@ Control4 Driver for WLED Controller Preset Cycling and Brightness/On/Off Control
 - Version 1: Initial Release
 - Version 2: New Icons for Preset Cycling
 - Version 3: Icon for Driver and LUA/XML cleanup
+- Version 4: Added Custom Preset programming action for selecting WLED Presets outside of the 1-10 UI Button Cycle range.

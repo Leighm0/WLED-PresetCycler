@@ -34,4 +34,3 @@ Control4 Driver for [WLED](https://github.com/Aircoookie/WLED) Controller Preset
 - Version 2: New Icons for Preset Cycling
 - Version 3: Icon for Driver and LUA/XML cleanup
 - Version 4: Added Custom Preset programming action for selecting WLED Presets outside of the 1-10 UI Button Cycle range.
-- 

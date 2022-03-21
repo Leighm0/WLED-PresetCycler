@@ -187,6 +187,16 @@ function EC.SELECT_PRESET(tParams)
 	setPreset(preset)
 end
 
+----------------------------------------------------------------------------------
+--Function Name : EC.CUSTOM_PRESET
+--Parameters    : tParams(table)
+--Description   : Function called when "Custom Preset" ExecuteCommand is received.
+----------------------------------------------------------------------------------
+function EC.CUSTOM_PRESET(tParams)
+	local preset = tParams["Preset"] or "off"
+	setWLEDPreset(preset)
+end
+
 -----------------------------------------------------------------
 --Function Name : ReceivedFromProxy
 --Parameters    : idBinding(int), strCommand(str), tParams(table)

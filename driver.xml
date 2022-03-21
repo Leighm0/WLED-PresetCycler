@@ -6,7 +6,7 @@
 	<model>WLED Compatible Hardware</model>
 	<created>26/11/2021 12:00 AM</created>
 	<modified>16/03/2022 12:00 AM</modified>
-	<version>3</version>
+	<version>4</version>
 	<control>lua_gen</control>
 	<driver>DriverWorks</driver>
 	<controlmethod>ip</controlmethod>
@@ -87,7 +87,7 @@
 		<commands>
 			<command>
 				<name>Select Preset</name>
-				<description>Set the Preset on NAME to: PARAM1</description>
+				<description>Set Preset on NAME to: PARAM1</description>
 				<params>
 					<param>
 						<name>Preset</name>
@@ -95,6 +95,19 @@
 						<minimum>1</minimum>
 						<maximum>10</maximum>
 						<default>1</default>
+					</param>
+				</params>
+			</command>
+			<command>
+				<name>Custom Preset</name>
+				<description>Set Custom Preset on NAME to: PARAM1</description>
+				<params>
+					<param>
+						<name>Preset</name>
+						<type>RANGED_INTEGER</type>
+						<minimum>11</minimum>
+						<maximum>250</maximum>
+						<default>11</default>
 					</param>
 				</params>
 			</command>

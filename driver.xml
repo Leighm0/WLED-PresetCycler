@@ -5,8 +5,8 @@
 	<name>WLED Controller (Preset Cycler)</name>
 	<model>WLED Compatible Hardware</model>
 	<created>26/11/2021 12:00 AM</created>
-	<modified>16/03/2022 12:00 AM</modified>
-	<version>4</version>
+	<modified>22/10/2022 12:00 AM</modified>
+	<version>5</version>
 	<control>lua_gen</control>
 	<driver>DriverWorks</driver>
 	<controlmethod>ip</controlmethod>
@@ -206,7 +206,10 @@
 		<hide_proxy_properties>True</hide_proxy_properties>
 		<has_button_events>True</has_button_events>
 		<num_buttons>3</num_buttons>
-		<load_group_support>False</load_group_support>
+		<load_group_support>True</load_group_support>
+		<advanced_scene_support>False</advanced_scene_support>
+		<reduced_als_support>True</reduced_als_support>
+		<supports_multichannel_scenes>False</supports_multichannel_scenes>
 	</capabilities>
 	<connections>
 		<connection proxybindingid="5001">
